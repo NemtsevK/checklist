@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  height: 100%;
+}
+
+.page__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  margin: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: #ffffff;
+}
+
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px 15px 22px;
+  color: #ffffff;
+  background-color: #3579f5;
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.task__chart {
+
+}
+
+.task__chart-text {
+
+}
+
+.task__content {
+
+}
+
+.task__category {
+
+}
+
+.task__title {
+
+}
+
+.task__description {
+
+}
+
+.task__button {
+
+}

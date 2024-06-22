@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чеклист</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="images/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/Inter-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Inter-SemiBold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
+<body class="page__body">
+<div class="task">
+  <div class="task__chart">
+    <div сlass="task__chart-text">
+      <span>0</span>/<span>7</span>
+    </div>
+  </div>
+  <div class="task__content">
+    <div class="task__category">Чеклист</div>
+    <h1 class="task__title">Выполнено: 0 из 7 действий</h1>
+    <p class="task__description">Следующее действие: Созвониться с клиентом до 23.05.24 12:00</p>
+  </div>
+  <button class="task__button">Открыть чеклист</button>
+</div>
 </body>
 </html>
