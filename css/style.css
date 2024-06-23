@@ -42,30 +42,71 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 16px;
-  padding: 12px 18px 15px 22px;
+  gap: 15px;
+  padding: 12px 18px 15px 21px;
   color: #ffffff;
   background-color: #3579f5;
   border-radius: 10px;
 }
 
 .task__chart {
+  --сompleted-tasks: 2; /*Процент выполнения задач*/
+  --size: 62px;
+  --border-fill: 2px;
+  --border-empty: 1px;
+  --border-color: #ffffff;
+  --end-angle: calc((360deg / 100) * var(--сompleted-tasks));
+
+  position: relative;
+  margin-top: 2px;
+  width: var(--size);
+  height: var(--size);
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  background-color: #ffffff;
+  justify-content: center;
+  background: transparent;
   border-radius: 50%;
 }
 
-.task__chart-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 58px;
-  height: 58px;
-  background-color: #3579f5;
+.task__chart-fill {
+  position: absolute;
+  z-index: 2;
+  width: calc(var(--size) - var(--border-fill));
+  height: calc(var(--size) - var(--border-fill));
+  border-radius: 50%;
+  background: conic-gradient(#ffffff 0 var(--end-angle), transparent var(--end-angle));
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--border-fill)), #000000 0);
+}
+
+.task__chart-fill:before,
+.task__chart-fill:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--border-fill);
+  height: var(--border-fill);
+  background-color: var(--border-color);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.task__chart-fill:before {
+  transform: translateX(-50%);
+}
+
+.task__chart-fill:after {
+  transform: translateX(-50%) rotate(var(--end-angle));
+  transform-origin: center calc(var(--size) / 2 - var(--border-empty));
+}
+
+.task__chart-line {
+  position: absolute;
+  z-index: 1;
+  width: calc(var(--size) - var(--border-fill) - var(--border-fill) / 2);
+  height: calc(var(--size) - var(--border-fill) - var(--border-fill) / 2);
+  background-color: rgba(255, 255, 255, 0.5);
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--border-empty)), #000000 0);
   border-radius: 50%;
 }
 
@@ -75,7 +116,7 @@
 }
 
 .task__content {
-  width: 441px;
+  width: 443px;
 }
 
 .task__category {
@@ -97,8 +138,10 @@
 }
 
 .task__button {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   padding: 10px 21px;
+  font-size: 14px;
+  letter-spacing: 1px;
   color: #4777ed;
   background-color: #f4f8ff;
   outline: 2px solid #f4f8ff;
